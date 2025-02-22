@@ -1,0 +1,118 @@
+
+main.o:	file format mach-o arm64
+
+Disassembly of section __TEXT,__text:
+
+0000000000000000 <ltmp0>:
+       0: 6d400400     	ldp	d0, d1, [x0]
+       4: 5e61d800     	scvtf	d0, d0
+       8: 5e61d821     	scvtf	d1, d1
+       c: d2d9aca8     	mov	x8, #0xcd6500000000     ; =225833675390976
+      10: f2e839a8     	movk	x8, #0x41cd, lsl #48
+      14: 9e670102     	fmov	d2, x8
+      18: 1f420400     	fmadd	d0, d0, d2, d1
+      1c: d65f03c0     	ret
+
+0000000000000020 <_main>:
+      20: d10283ff     	sub	sp, sp, #0xa0
+      24: 6d0323e9     	stp	d9, d8, [sp, #0x30]
+      28: a9046ffc     	stp	x28, x27, [sp, #0x40]
+      2c: a90567fa     	stp	x26, x25, [sp, #0x50]
+      30: a9065ff8     	stp	x24, x23, [sp, #0x60]
+      34: a90757f6     	stp	x22, x21, [sp, #0x70]
+      38: a9084ff4     	stp	x20, x19, [sp, #0x80]
+      3c: a9097bfd     	stp	x29, x30, [sp, #0x90]
+      40: 910243fd     	add	x29, sp, #0x90
+      44: d2800008     	mov	x8, #0x0                ; =0
+      48: 90000009     	adrp	x9, 0x0 <ltmp0>
+      4c: f9400129     	ldr	x9, [x9]
+      50: 5290d40a     	mov	w10, #0x86a0            ; =34464
+      54: 72a0002a     	movk	w10, #0x1, lsl #16
+      58: b8287928     	str	w8, [x9, x8, lsl #2]
+      5c: 91000508     	add	x8, x8, #0x1
+      60: eb0a011f     	cmp	x8, x10
+      64: 54ffffa1     	b.ne	0x58 <_main+0x38>
+      68: 90000013     	adrp	x19, 0x0 <ltmp0>
+      6c: 91000273     	add	x19, x19, #0x0
+      70: 5280003a     	mov	w26, #0x1               ; =1
+      74: 90000014     	adrp	x20, 0x0 <ltmp0>
+      78: f9400294     	ldr	x20, [x20]
+      7c: 90000015     	adrp	x21, 0x0 <ltmp0>
+      80: 910002b5     	add	x21, x21, #0x0
+      84: d2d9acbb     	mov	x27, #0xcd6500000000    ; =225833675390976
+      88: f2e839bb     	movk	x27, #0x41cd, lsl #48
+      8c: 90000016     	adrp	x22, 0x0 <ltmp0>
+      90: 910002d6     	add	x22, x22, #0x0
+      94: 90000017     	adrp	x23, 0x0 <ltmp0>
+      98: 910002f7     	add	x23, x23, #0x0
+      9c: 90000018     	adrp	x24, 0x0 <ltmp0>
+      a0: 91000318     	add	x24, x24, #0x0
+      a4: f90003fa     	str	x26, [sp]
+      a8: aa1303e0     	mov	x0, x19
+      ac: 94000000     	bl	0xac <_main+0x8c>
+      b0: 910083e1     	add	x1, sp, #0x20
+      b4: 52800200     	mov	w0, #0x10               ; =16
+      b8: 94000000     	bl	0xb8 <_main+0x98>
+      bc: aa1403e0     	mov	x0, x20
+      c0: 5290d401     	mov	w1, #0x86a0             ; =34464
+      c4: 72a00021     	movk	w1, #0x1, lsl #16
+      c8: 94000000     	bl	0xc8 <_main+0xa8>
+      cc: aa0003f9     	mov	x25, x0
+      d0: 910043e1     	add	x1, sp, #0x10
+      d4: 52800200     	mov	w0, #0x10               ; =16
+      d8: 94000000     	bl	0xd8 <_main+0xb8>
+      dc: f90003f9     	str	x25, [sp]
+      e0: aa1503e0     	mov	x0, x21
+      e4: 94000000     	bl	0xe4 <_main+0xc4>
+      e8: 6d4107e0     	ldp	d0, d1, [sp, #0x10]
+      ec: 5e61d800     	scvtf	d0, d0
+      f0: 5e61d821     	scvtf	d1, d1
+      f4: 9e670368     	fmov	d8, x27
+      f8: 1f480400     	fmadd	d0, d0, d8, d1
+      fc: 6d420be1     	ldp	d1, d2, [sp, #0x20]
+     100: 5e61d821     	scvtf	d1, d1
+     104: 5e61d842     	scvtf	d2, d2
+     108: 1f480821     	fmadd	d1, d1, d8, d2
+     10c: 1e613800     	fsub	d0, d0, d1
+     110: fd0003e0     	str	d0, [sp]
+     114: aa1603e0     	mov	x0, x22
+     118: 94000000     	bl	0x118 <_main+0xf8>
+     11c: 910083e1     	add	x1, sp, #0x20
+     120: 52800200     	mov	w0, #0x10               ; =16
+     124: 94000000     	bl	0x124 <_main+0x104>
+     128: aa1403e0     	mov	x0, x20
+     12c: 5290d401     	mov	w1, #0x86a0             ; =34464
+     130: 72a00021     	movk	w1, #0x1, lsl #16
+     134: 94000000     	bl	0x134 <_main+0x114>
+     138: aa0003f9     	mov	x25, x0
+     13c: 910043e1     	add	x1, sp, #0x10
+     140: 52800200     	mov	w0, #0x10               ; =16
+     144: 94000000     	bl	0x144 <_main+0x124>
+     148: f90003f9     	str	x25, [sp]
+     14c: aa1703e0     	mov	x0, x23
+     150: 94000000     	bl	0x150 <_main+0x130>
+     154: 6d4107e0     	ldp	d0, d1, [sp, #0x10]
+     158: 5e61d800     	scvtf	d0, d0
+     15c: 5e61d821     	scvtf	d1, d1
+     160: 1f480400     	fmadd	d0, d0, d8, d1
+     164: 6d420be1     	ldp	d1, d2, [sp, #0x20]
+     168: 5e61d821     	scvtf	d1, d1
+     16c: 5e61d842     	scvtf	d2, d2
+     170: 1f480821     	fmadd	d1, d1, d8, d2
+     174: 1e613800     	fsub	d0, d0, d1
+     178: fd0003e0     	str	d0, [sp]
+     17c: aa1803e0     	mov	x0, x24
+     180: 94000000     	bl	0x180 <_main+0x160>
+     184: 1100075a     	add	w26, w26, #0x1
+     188: 71002f5f     	cmp	w26, #0xb
+     18c: 54fff8c1     	b.ne	0xa4 <_main+0x84>
+     190: 52800000     	mov	w0, #0x0                ; =0
+     194: a9497bfd     	ldp	x29, x30, [sp, #0x90]
+     198: a9484ff4     	ldp	x20, x19, [sp, #0x80]
+     19c: a94757f6     	ldp	x22, x21, [sp, #0x70]
+     1a0: a9465ff8     	ldp	x24, x23, [sp, #0x60]
+     1a4: a94567fa     	ldp	x26, x25, [sp, #0x50]
+     1a8: a9446ffc     	ldp	x28, x27, [sp, #0x40]
+     1ac: 6d4323e9     	ldp	d9, d8, [sp, #0x30]
+     1b0: 910283ff     	add	sp, sp, #0xa0
+     1b4: d65f03c0     	ret
